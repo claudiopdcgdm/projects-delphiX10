@@ -1,0 +1,19 @@
+program app_wms;
+
+uses
+  Vcl.Forms,
+  UfrmMain in 'UfrmMain.pas' {frmMain},
+  UfrmCadastroProdutos in 'UfrmCadastroProdutos.pas' {frmCadastroProdutos},
+  UfrmCadastroEndereco in 'UfrmCadastroEndereco.pas' {frmCadEndereco},
+  UfrmArmazenagem in 'UfrmArmazenagem.pas' {frmArmazenagem},
+  UfrmPesquisaEnd in 'UfrmPesquisaEnd.pas' {frmPesquisa1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmPesquisa1, frmPesquisa1);
+  Application.Run;
+end.

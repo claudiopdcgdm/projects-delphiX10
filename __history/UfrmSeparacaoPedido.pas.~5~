@@ -1,0 +1,54 @@
+unit UfrmSeparacaoPedido;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmSeparacaoPedido = class(TForm)
+    gridRelatorioSeparacao: TDBGrid;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    procedure formatGrid);
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSeparacaoPedido: TfrmSeparacaoPedido;
+
+implementation
+
+{$R *.dfm}
+
+uses UfrmPedidoSaida;
+
+procedure TfrmSeparacaoPedido.FormShow(Sender: TObject);
+begin
+  gridRelatorioSeparacao.DataSource := frmPedidoSaida.pgDataSourceExibeRel;
+end;
+
+//*FORMAT GRID ITENS
+procedure TfrmPedidoSaida.formatGridItens;
+
+begin
+  pgDataSourceItens.DataSet.FieldByName('numeropedido').DisplayWidth:= 7;
+  pgDataSourceItens.DataSet.FieldByName('quantidadeitem').DisplayWidth:= 5;
+  pgDataSourceItens.DataSet.FieldByName('sku').DisplayWidth:= 15;
+  pgDataSourceItens.DataSet.FieldByName('descricaoproduto').DisplayWidth:= 30;
+  pgDataSourceItens.DataSet.FieldByName('tipobaixa').DisplayWidth:= 4;
+  pgDataSourceItens.DataSet.FieldByName('nomeendereco').Visible:= false;
+  pgDataSourceItens.DataSet.FieldByName('etiquetaendereco').Visible:= false;
+  pgDataSourceItens.DataSet.FieldByName('codigoproduto').Visible:= false;
+  pgDataSourceItens.DataSet.FieldByName('codigoendereco').Visible:= false;
+  pgDataSourceItens.DataSet.FieldByName('codigopedidoitem').Visible:= false;
+  pgDataSourceItens.DataSet.FieldByName('codigopedido').Visible:= false;
+
+end;
+
+
+end.

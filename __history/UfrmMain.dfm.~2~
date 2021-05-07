@@ -1,0 +1,42 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Simple App WMS'
+  ClientHeight = 602
+  ClientWidth = 714
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object stbInformation: TStatusBar
+    Left = 0
+    Top = 576
+    Width = 714
+    Height = 26
+    Panels = <
+      item
+        Text = 'Simple App WMS'
+        Width = 200
+      end
+      item
+        Text = 'Data.:'
+        Width = 50
+      end
+      item
+        Text = 'Hora.:'
+        Width = 50
+      end>
+  end
+  object timerDataHora: TTimer
+    OnTimer = timerDataHoraTimer
+    Left = 16
+    Top = 520
+  end
+end
