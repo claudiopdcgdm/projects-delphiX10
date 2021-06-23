@@ -1,0 +1,32 @@
+unit URelatorioPedidoSaida;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.PG, FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, FireDAC.Comp.Client,
+  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmRelatorioPedidoSaida = class(TForm)
+    DBGrid1: TDBGrid;
+    Label1: TLabel;
+    FDConnection1: TFDConnection;
+    btnIr: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelatorioPedidoSaida: TfrmRelatorioPedidoSaida;
+
+implementation
+
+{$R *.dfm}
+
+end.

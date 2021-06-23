@@ -15429,6 +15429,13 @@ object frmMain: TfrmMain
         Width = 200
       end>
   end
+  object ProgressBar1: TProgressBar
+    Left = 32
+    Top = 488
+    Width = 150
+    Height = 17
+    TabOrder = 1
+  end
   object timerDataHora: TTimer
     OnTimer = timerDataHoraTimer
     Left = 16
@@ -15473,6 +15480,7 @@ object frmMain: TfrmMain
       Caption = 'Relatorios'
       object mnuRelPedidoSaida: TMenuItem
         Caption = 'Pedidos Saida'
+        OnClick = mnuRelPedidoSaidaClick
       end
     end
   end

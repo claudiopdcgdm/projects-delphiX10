@@ -24,12 +24,14 @@ type
     mnuRelPedidoSaida: TMenuItem;
     Image1: TImage;
     menuPedidoSaida: TMenuItem;
+    ProgressBar1: TProgressBar;
     procedure timerDataHoraTimer(Sender: TObject);
     procedure mnuCadProdutoClick(Sender: TObject);
     procedure mnuSairClick(Sender: TObject);
     procedure mnuCadEnderecoClick(Sender: TObject);
     procedure mnuMovArmazenarClick(Sender: TObject);
     procedure menuPedidoSaidaClick(Sender: TObject);
+    procedure mnuRelPedidoSaidaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,7 +46,7 @@ implementation
 {$R *.dfm}
 
 uses UfrmCadastroProdutos, UfrmCadastroEndereco, UfrmArmazenagem,
-  UfrmPedidoSaida;
+  UfrmPedidoSaida, URelatorioPedidoSaida;
 
 
 procedure TfrmMain.menuPedidoSaidaClick(Sender: TObject);
@@ -84,6 +86,16 @@ begin
         frmArmazenagem.ShowModal;
     finally
         FreeAndNil(frmArmazenagem);
+    end;
+end;
+
+procedure TfrmMain.mnuRelPedidoSaidaClick(Sender: TObject);
+begin
+    try
+        Application.CreateForm(TfrmRelatorioPedidoSaida, frmRelatorioPedidoSaida);
+        frmRelatorioPedidoSaida.ShowModal;
+    finally
+        FreeAndNil(frmRelatorioPedidoSaida);
     end;
 end;
 
